@@ -29,7 +29,6 @@ const services = [
   },
 ];
 
-
 const materials = [
   {
     number: "01",
@@ -282,13 +281,13 @@ export default async function HomePage() {
                 HERO TEXT + FEATURES
             ================================================= */}
 
-            <div className="absolute inset-y-0 left-0 flex w-full max-w-[52%] flex-col justify-center px-7 py-10 text-white md:px-10 lg:px-12">
+            <div className="absolute inset-y-0 left-0 flex w-full max-w-full flex-col justify-start px-6 py-8 text-white md:max-w-[52%] md:justify-center md:px-10 md:py-10 lg:px-12">
 
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b89452]">
                 Duta Karya Membrane
               </p>
 
-              <h2 className="mt-5 max-w-md text-4xl font-medium leading-[0.95] tracking-[-0.05em] md:text-5xl lg:text-6xl">
+              <h2 className="mt-4 max-w-md text-3xl font-medium leading-[0.95] tracking-[-0.05em] md:mt-5 md:text-5xl lg:text-6xl">
                 Built for
                 <br />
                 structure.
@@ -306,7 +305,7 @@ export default async function HomePage() {
                   GOLD FEATURE ICONS
               ================================================= */}
 
-              <div className="mt-8 grid max-w-xl grid-cols-3 gap-4 md:mt-10 md:gap-6">
+              <div className="mt-7 grid max-w-xl grid-cols-3 gap-3 md:mt-10 md:gap-6">
 
                 {/* FEATURE 01 */}
                 <div>
@@ -328,7 +327,7 @@ export default async function HomePage() {
                     Lama
                   </h3>
 
-                  <p className="mt-2 text-[10px] leading-4 text-white/50 md:text-xs md:leading-5">
+                  <p className="mt-2 hidden text-[10px] leading-4 text-white/50 md:block md:text-xs md:leading-5">
                     Material premium dengan daya tahan tinggi.
                   </p>
                 </div>
@@ -351,7 +350,7 @@ export default async function HomePage() {
                     Desain Modern
                   </h3>
 
-                  <p className="mt-2 text-[10px] leading-4 text-white/50 md:text-xs md:leading-5">
+                  <p className="mt-2 hidden text-[10px] leading-4 text-white/50 md:block md:text-xs md:leading-5">
                     Estetika elegan yang menyatu dengan berbagai konsep.
                   </p>
                 </div>
@@ -376,7 +375,7 @@ export default async function HomePage() {
                     Ekstrem
                   </h3>
 
-                  <p className="mt-2 text-[10px] leading-4 text-white/50 md:text-xs md:leading-5">
+                  <p className="mt-2 hidden text-[10px] leading-4 text-white/50 md:block md:text-xs md:leading-5">
                     Perlindungan optimal dari panas, hujan, dan angin.
                   </p>
                 </div>
@@ -388,7 +387,7 @@ export default async function HomePage() {
                 HERO LOCATION
             ================================================= */}
 
-            <div className="absolute bottom-8 right-8 text-sm text-white/60 md:bottom-10 md:right-10">
+            <div className="absolute bottom-6 right-6 hidden text-sm text-white/60 md:block md:bottom-10 md:right-10">
               Bandung · Indonesia
             </div>
 
@@ -554,7 +553,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-
       {/* ===================================================== */}
       {/* MATERIALS */}
       {/* ===================================================== */}
@@ -564,6 +562,7 @@ export default async function HomePage() {
         className="bg-[#ebe8e1] px-6 py-24 md:px-10 md:py-32 lg:px-14"
       >
         <div className="mx-auto max-w-[1440px]">
+
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b89452]">
@@ -573,7 +572,9 @@ export default async function HomePage() {
               <h2 className="mt-5 max-w-3xl text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
                 Canopy &amp;
                 <br />
-                <span className="text-[#8d8982]">membrane materials.</span>
+                <span className="text-[#8d8982]">
+                  membrane materials.
+                </span>
               </h2>
             </div>
 
@@ -591,6 +592,7 @@ export default async function HomePage() {
                 className="group bg-[#f7f5f0] p-7 transition-colors hover:bg-white md:p-9 lg:p-10"
               >
                 <div className="flex items-start justify-between gap-6">
+
                   <span className="text-sm font-medium text-[#b89452]">
                     {material.number}
                   </span>
@@ -598,6 +600,7 @@ export default async function HomePage() {
                   <span className="text-2xl text-[#aaa49a] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                     ↗
                   </span>
+
                 </div>
 
                 <h3 className="mt-10 text-2xl font-medium tracking-[-0.03em] md:text-3xl">
@@ -620,22 +623,28 @@ export default async function HomePage() {
                 </div>
 
                 <div className="mt-8 border-t border-black/10 pt-5">
+
                   <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#b89452]">
                     Aplikasi
                   </p>
 
                   <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs text-[#77736c]">
                     {material.applications.map((application) => (
-                      <span key={application}>{application}</span>
+                      <span key={application}>
+                        {application}
+                      </span>
                     ))}
                   </div>
+
                 </div>
               </article>
             ))}
           </div>
 
           <div className="mt-14 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+
             <div className="rounded-[1.5rem] bg-[#171717] p-7 text-white md:p-9 lg:p-10">
+
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b89452]">
                 Material Comparison
               </p>
@@ -646,13 +655,24 @@ export default async function HomePage() {
 
               <div className="mt-8 overflow-x-auto">
                 <table className="w-full min-w-[620px] border-collapse text-left text-xs">
+
                   <thead>
                     <tr className="border-b border-white/10 text-white/45">
-                      <th className="px-3 py-3 font-medium">Material</th>
-                      <th className="px-3 py-3 font-medium">UV</th>
-                      <th className="px-3 py-3 font-medium">Waterproof</th>
-                      <th className="px-3 py-3 font-medium">Flexible</th>
-                      <th className="px-3 py-3 font-medium">Harga</th>
+                      <th className="px-3 py-3 font-medium">
+                        Material
+                      </th>
+                      <th className="px-3 py-3 font-medium">
+                        UV
+                      </th>
+                      <th className="px-3 py-3 font-medium">
+                        Waterproof
+                      </th>
+                      <th className="px-3 py-3 font-medium">
+                        Flexible
+                      </th>
+                      <th className="px-3 py-3 font-medium">
+                        Harga
+                      </th>
                     </tr>
                   </thead>
 
@@ -666,23 +686,33 @@ export default async function HomePage() {
                           <td className="px-3 py-3 font-medium text-white">
                             {name}
                           </td>
-                          <td className="px-3 py-3 text-[#b89452]">{uv}</td>
+
+                          <td className="px-3 py-3 text-[#b89452]">
+                            {uv}
+                          </td>
+
                           <td className="px-3 py-3 text-[#b89452]">
                             {waterproof}
                           </td>
+
                           <td className="px-3 py-3 text-[#b89452]">
                             {flexible}
                           </td>
-                          <td className="px-3 py-3 text-white/70">{price}</td>
+
+                          <td className="px-3 py-3 text-white/70">
+                            {price}
+                          </td>
                         </tr>
                       )
                     )}
                   </tbody>
+
                 </table>
               </div>
             </div>
 
             <div className="rounded-[1.5rem] bg-white p-7 md:p-9 lg:p-10">
+
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b89452]">
                 How to Choose
               </p>
@@ -692,11 +722,28 @@ export default async function HomePage() {
               </h3>
 
               <div className="mt-8 space-y-0 border-t border-black/10">
+
                 {[
-                  ["01", "Area & fungsi", "Tentukan penggunaan dan karakter ruang."],
-                  ["02", "Ketahanan", "Pertimbangkan UV, cuaca, air, dan umur pakai."],
-                  ["03", "Visual", "Sesuaikan warna, transparansi, dan karakter material."],
-                  ["04", "Budget", "Pilih spesifikasi yang seimbang dengan kebutuhan."],
+                  [
+                    "01",
+                    "Area & fungsi",
+                    "Tentukan penggunaan dan karakter ruang.",
+                  ],
+                  [
+                    "02",
+                    "Ketahanan",
+                    "Pertimbangkan UV, cuaca, air, dan umur pakai.",
+                  ],
+                  [
+                    "03",
+                    "Visual",
+                    "Sesuaikan warna, transparansi, dan karakter material.",
+                  ],
+                  [
+                    "04",
+                    "Budget",
+                    "Pilih spesifikasi yang seimbang dengan kebutuhan.",
+                  ],
                 ].map(([number, title, description]) => (
                   <div
                     key={number}
@@ -707,19 +754,23 @@ export default async function HomePage() {
                     </span>
 
                     <div>
-                      <h4 className="font-medium">{title}</h4>
+                      <h4 className="font-medium">
+                        {title}
+                      </h4>
+
                       <p className="mt-1 text-sm leading-6 text-[#77736c]">
                         {description}
                       </p>
                     </div>
                   </div>
                 ))}
+
               </div>
             </div>
+
           </div>
         </div>
       </section>
-
 
       {/* ===================================================== */}
       {/* SELECTED PROJECTS */}
@@ -895,7 +946,6 @@ export default async function HomePage() {
         id="process"
         className="bg-[#171717] px-6 py-24 text-white md:px-10 md:py-32 lg:px-14"
       >
-
         <div className="mx-auto max-w-[1440px]">
 
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b89452]">
