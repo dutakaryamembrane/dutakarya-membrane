@@ -16,6 +16,10 @@ export default function KontakPage() {
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
+  // ==========================================
+  // WHATSAPP
+  // ==========================================
+
   const whatsappMessage =
     "Halo Duta Karya Membrane, saya ingin melakukan konsultasi mengenai kebutuhan proyek saya.";
 
@@ -30,6 +34,10 @@ export default function KontakPage() {
     whatsappMessage
   )}`;
 
+  // ==========================================
+  // HANDLE INPUT
+  // ==========================================
+
   function handleChange(
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -40,6 +48,10 @@ export default function KontakPage() {
       [e.target.name]: e.target.value,
     });
   }
+
+  // ==========================================
+  // SUBMIT CONSULTATION
+  // ==========================================
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -90,9 +102,14 @@ export default function KontakPage() {
 
   return (
     <main className="min-h-screen bg-[#f7f5f0] text-[#171717]">
-      {/* HEADER */}
+
+      {/* ==========================================
+          HEADER
+      ========================================== */}
+
       <header className="border-b border-black/10 bg-[#f7f5f0]">
         <div className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 md:px-10 lg:px-14">
+
           <a
             href="/"
             className="text-lg font-semibold tracking-[-0.03em]"
@@ -107,12 +124,17 @@ export default function KontakPage() {
           >
             Kembali
           </a>
+
         </div>
       </header>
 
-      {/* HERO */}
+      {/* ==========================================
+          HERO
+      ========================================== */}
+
       <section className="bg-[#171717] px-6 py-20 text-white md:px-10 lg:px-14">
         <div className="mx-auto max-w-[1440px]">
+
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b89452]">
             Consultation
           </p>
@@ -128,15 +150,24 @@ export default function KontakPage() {
             Tim Duta Karya Membrane siap membantu dari tahap
             konsultasi, desain, fabrikasi hingga instalasi.
           </p>
+
         </div>
       </section>
 
-      {/* FORM */}
+      {/* ==========================================
+          CONTACT / FORM SECTION
+      ========================================== */}
+
       <section className="mx-auto max-w-[1440px] px-6 py-16 md:px-10 md:py-24 lg:px-14">
+
         <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
 
-          {/* INFO */}
+          {/* ==========================================
+              LEFT INFO
+          ========================================== */}
+
           <div>
+
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b89452]">
               Start a project
             </p>
@@ -151,8 +182,12 @@ export default function KontakPage() {
               semakin mudah bagi tim kami memahami kebutuhan Anda.
             </p>
 
-            {/* COMPANY INFO */}
+            {/* ==========================================
+                COMPANY INFO
+            ========================================== */}
+
             <div className="mt-10 border-t border-black/10 pt-8">
+
               <p className="text-sm font-semibold">
                 Duta Karya Membrane
               </p>
@@ -167,10 +202,15 @@ export default function KontakPage() {
               >
                 dutakaryamembrane@gmail.com
               </a>
+
             </div>
 
-            {/* KONSULTASI LANGSUNG VIA WHATSAPP */}
+            {/* ==========================================
+                WHATSAPP CONSULTATION
+            ========================================== */}
+
             <div className="mt-10 rounded-[2rem] border border-black/10 bg-white p-7 shadow-sm md:p-8">
+
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b89452]">
                 Konsultasi Langsung
               </p>
@@ -184,7 +224,11 @@ export default function KontakPage() {
                 Anda dapat memilih salah satu nomor WhatsApp berikut.
               </p>
 
-              {/* WHATSAPP 1 */}
+              {/* ==========================================
+                  WHATSAPP 1
+                  NOMOR TIDAK DITAMPILKAN
+              ========================================== */}
+
               <a
                 href={whatsappUrl1}
                 target="_blank"
@@ -193,7 +237,6 @@ export default function KontakPage() {
                   mt-6
                   flex
                   w-full
-                  flex-col
                   items-center
                   justify-center
                   rounded-full
@@ -211,13 +254,14 @@ export default function KontakPage() {
                 "
                 style={{ color: "#ffffff" }}
               >
-                <span>Duta Karya Membrane 1</span>
-                <span className="mt-0.5 text-xs font-normal text-white/70">
-                  +62 851-8338-1715
-                </span>
+                Duta Karya Membrane 1
               </a>
 
-              {/* WHATSAPP 2 */}
+              {/* ==========================================
+                  WHATSAPP 2
+                  NOMOR TIDAK DITAMPILKAN
+              ========================================== */}
+
               <a
                 href={whatsappUrl2}
                 target="_blank"
@@ -226,7 +270,6 @@ export default function KontakPage() {
                   mt-3
                   flex
                   w-full
-                  flex-col
                   items-center
                   justify-center
                   rounded-full
@@ -246,23 +289,28 @@ export default function KontakPage() {
                   hover:!text-white
                 "
               >
-                <span>Duta Karya Membrane 2</span>
-                <span className="mt-0.5 text-xs font-normal text-[#77736c]">
-                  +62 896-5802-6869
-                </span>
+                Duta Karya Membrane 2
               </a>
+
             </div>
+
           </div>
 
-          {/* FORM */}
+          {/* ==========================================
+              CONSULTATION FORM
+          ========================================== */}
+
           <form
             onSubmit={handleSubmit}
             className="rounded-[2rem] bg-white p-7 shadow-sm md:p-10"
           >
+
             <div className="grid gap-6 md:grid-cols-2">
 
               {/* NAME */}
+
               <div>
+
                 <label className="mb-2 block text-sm font-medium">
                   Nama *
                 </label>
@@ -276,10 +324,13 @@ export default function KontakPage() {
                   placeholder="Nama lengkap"
                   className="w-full rounded-xl border border-black/10 bg-[#f7f5f0] px-4 py-3.5 text-sm outline-none transition focus:border-[#b89452]"
                 />
+
               </div>
 
               {/* EMAIL */}
+
               <div>
+
                 <label className="mb-2 block text-sm font-medium">
                   Email *
                 </label>
@@ -293,10 +344,13 @@ export default function KontakPage() {
                   placeholder="nama@email.com"
                   className="w-full rounded-xl border border-black/10 bg-[#f7f5f0] px-4 py-3.5 text-sm outline-none transition focus:border-[#b89452]"
                 />
+
               </div>
 
               {/* PHONE */}
+
               <div>
+
                 <label className="mb-2 block text-sm font-medium">
                   Nomor WhatsApp / Telepon *
                 </label>
@@ -310,10 +364,13 @@ export default function KontakPage() {
                   placeholder="08xxxxxxxxxx"
                   className="w-full rounded-xl border border-black/10 bg-[#f7f5f0] px-4 py-3.5 text-sm outline-none transition focus:border-[#b89452]"
                 />
+
               </div>
 
               {/* COMPANY */}
+
               <div>
+
                 <label className="mb-2 block text-sm font-medium">
                   Perusahaan
                 </label>
@@ -326,10 +383,13 @@ export default function KontakPage() {
                   placeholder="Nama perusahaan"
                   className="w-full rounded-xl border border-black/10 bg-[#f7f5f0] px-4 py-3.5 text-sm outline-none transition focus:border-[#b89452]"
                 />
+
               </div>
 
               {/* SERVICE */}
+
               <div className="md:col-span-2">
+
                 <label className="mb-2 block text-sm font-medium">
                   Kebutuhan Layanan *
                 </label>
@@ -341,6 +401,7 @@ export default function KontakPage() {
                   required
                   className="w-full rounded-xl border border-black/10 bg-[#f7f5f0] px-4 py-3.5 text-sm outline-none transition focus:border-[#b89452]"
                 >
+
                   <option value="">
                     Pilih layanan
                   </option>
@@ -364,11 +425,15 @@ export default function KontakPage() {
                   <option value="Konsultasi">
                     Konsultasi / Lainnya
                   </option>
+
                 </select>
+
               </div>
 
               {/* MESSAGE */}
+
               <div className="md:col-span-2">
+
                 <label className="mb-2 block text-sm font-medium">
                   Detail Kebutuhan *
                 </label>
@@ -382,24 +447,35 @@ export default function KontakPage() {
                   placeholder="Ceritakan kebutuhan proyek, lokasi, ukuran area, jenis struktur, atau informasi lain yang sudah Anda miliki."
                   className="w-full resize-none rounded-xl border border-black/10 bg-[#f7f5f0] px-4 py-3.5 text-sm outline-none transition focus:border-[#b89452]"
                 />
+
               </div>
+
             </div>
 
-            {/* ERROR */}
+            {/* ==========================================
+                ERROR MESSAGE
+            ========================================== */}
+
             {error && (
               <div className="mt-6 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">
                 {error}
               </div>
             )}
 
-            {/* SUCCESS */}
+            {/* ==========================================
+                SUCCESS MESSAGE
+            ========================================== */}
+
             {success && (
               <div className="mt-6 rounded-xl bg-green-50 px-4 py-3 text-sm leading-6 text-green-700">
                 {success}
               </div>
             )}
 
-            {/* SUBMIT */}
+            {/* ==========================================
+                SUBMIT BUTTON
+            ========================================== */}
+
             <button
               type="submit"
               disabled={loading}
@@ -414,14 +490,23 @@ export default function KontakPage() {
               Data yang Anda kirim akan digunakan untuk
               kebutuhan komunikasi proyek.
             </p>
+
           </form>
+
         </div>
+
       </section>
 
-      {/* FOOTER */}
+      {/* ==========================================
+          FOOTER
+      ========================================== */}
+
       <footer className="border-t border-black/10 bg-[#f7f5f0]">
+
         <div className="mx-auto flex max-w-[1440px] flex-col gap-4 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-10 lg:px-14">
+
           <div>
+
             <p className="font-semibold">
               Duta Karya Membrane
             </p>
@@ -429,13 +514,17 @@ export default function KontakPage() {
             <p className="mt-2 text-sm text-[#77736c]">
               Membrane · Tensile · Canopy · Steel
             </p>
+
           </div>
 
           <p className="text-sm text-[#77736c]">
             © {new Date().getFullYear()} Duta Karya Membrane
           </p>
+
         </div>
+
       </footer>
+
     </main>
   );
 }
