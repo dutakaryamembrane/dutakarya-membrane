@@ -16,10 +16,18 @@ export default function KontakPage() {
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
-  const whatsappNumber = "6285183381715";
+  const whatsappMessage =
+    "Halo Duta Karya Membrane, saya ingin melakukan konsultasi mengenai kebutuhan proyek saya.";
 
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    "Halo Duta Karya Membrane, saya ingin melakukan konsultasi mengenai kebutuhan proyek saya."
+  const whatsappNumber1 = "6285183381715";
+  const whatsappNumber2 = "6289658026869";
+
+  const whatsappUrl1 = `https://wa.me/${whatsappNumber1}?text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
+
+  const whatsappUrl2 = `https://wa.me/${whatsappNumber2}?text=${encodeURIComponent(
+    whatsappMessage
   )}`;
 
   function handleChange(
@@ -173,17 +181,19 @@ export default function KontakPage() {
 
               <p className="mt-4 text-sm leading-6 text-[#68645d]">
                 Jika Anda ingin langsung berbicara dengan tim kami,
-                Anda dapat melakukan konsultasi melalui WhatsApp.
+                Anda dapat memilih salah satu nomor WhatsApp berikut.
               </p>
 
+              {/* WHATSAPP 1 */}
               <a
-                href="https://wa.me/6285183381715"
+                href={whatsappUrl1}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
                   mt-6
-                  inline-flex
+                  flex
                   w-full
+                  flex-col
                   items-center
                   justify-center
                   rounded-full
@@ -199,11 +209,47 @@ export default function KontakPage() {
                   hover:bg-[#b89452]
                   hover:text-white
                 "
-                style={{
-                  color: "#ffffff",
-                }}
+                style={{ color: "#ffffff" }}
               >
-                Konsultasi via WhatsApp
+                <span>Duta Karya Membrane 1</span>
+                <span className="mt-0.5 text-xs font-normal text-white/70">
+                  +62 851-8338-1715
+                </span>
+              </a>
+
+              {/* WHATSAPP 2 */}
+              <a
+                href={whatsappUrl2}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  mt-3
+                  flex
+                  w-full
+                  flex-col
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-black/10
+                  bg-[#f7f5f0]
+                  px-6
+                  py-3.5
+                  text-sm
+                  font-semibold
+                  text-[#171717]
+                  transition-all
+                  duration-200
+                  ease-out
+                  hover:border-[#b89452]
+                  hover:bg-[#b89452]
+                  hover:text-white
+                "
+              >
+                <span>Duta Karya Membrane 2</span>
+                <span className="mt-0.5 text-xs font-normal text-[#77736c]">
+                  +62 896-5802-6869
+                </span>
               </a>
             </div>
           </div>
