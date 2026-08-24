@@ -1,0 +1,267 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        String     @id @default(cuid())
+  email     String     @unique
+  password  String
+  name      String
+  role      UserRole   @default(EDITOR)
+  active    Boolean    @default(true)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  auditLogs AuditLog[]
+
+  @@index([email])
+}
+
+model Media {
+  id                 String         @id @default(cuid())
+  type               MediaType
+  source             MediaSource    @default(UPLOAD)
+  url                String
+  publicId           String
+  filename           String
+  mimeType           String
+  size               Int
+  width              Int?
+  height             Int?
+  duration           Int?
+  thumbnailUrl       String?
+  externalUrl        String?
+  altText            String?
+  caption            String?
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+  materialDatasheets Material[]     @relation("MaterialDatasheet")
+  materialImages     Material[]     @relation("MaterialImage")
+  projectMedias      ProjectMedia[]
+
+  @@index([type])
+  @@index([source])
+}
+
+model Project {
+  id             String            @id @default(cuid())
+  title          String
+  slug           String            @unique
+  description    String
+  client         String?
+  location       String?
+  category       String?
+  completionDate DateTime?
+  published      Boolean           @default(false)
+  featured       Boolean           @default(false)
+  area           String?
+  structure      String?
+  membrane       String?
+  technicalNotes String?
+  seoTitle       String?
+  seoDescription String?
+  seoKeywords    String?
+  ogImage        String?
+  sortOrder      Int               @default(0)
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  materials      ProjectMaterial[]
+  medias         ProjectMedia[]
+
+  @@index([slug])
+  @@index([published])
+  @@index([featured])
+  @@index([sortOrder])
+}
+
+model ProjectMedia {
+  id        String   @id @default(cuid())
+  projectId String
+  mediaId   String
+  sortOrder Int      @default(0)
+  isCover   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  media     Media    @relation(fields: [mediaId], references: [id], onDelete: Cascade)
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@unique([projectId, mediaId])
+  @@index([projectId])
+  @@index([mediaId])
+}
+
+model ProjectMaterial {
+  id         String   @id @default(cuid())
+  projectId  String
+  materialId String
+  notes      String?
+  sortOrder  Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  material   Material @relation(fields: [materialId], references: [id], onDelete: Cascade)
+  project    Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@unique([projectId, materialId])
+  @@index([projectId])
+  @@index([materialId])
+}
+
+model Material {
+  id               String            @id @default(cuid())
+  name             String
+  slug             String            @unique
+  category         String
+  shortDescription String?
+  description      String?
+  imageId          String?
+  datasheetId      String?
+  specifications   Json?
+  manufacturer     String?
+  productCode      String?
+  advantages       String?
+  published        Boolean           @default(false)
+  featured         Boolean           @default(false)
+  sortOrder        Int               @default(0)
+  seoTitle         String?
+  seoDescription   String?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  datasheet        Media?            @relation("MaterialDatasheet", fields: [datasheetId], references: [id])
+  image            Media?            @relation("MaterialImage", fields: [imageId], references: [id])
+  projects         ProjectMaterial[]
+
+  @@index([slug])
+  @@index([category])
+  @@index([published])
+  @@index([featured])
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String
+  icon        String?
+  published   Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([slug])
+  @@index([sortOrder])
+}
+
+model Testimonial {
+  id            String   @id @default(cuid())
+  clientName    String
+  clientTitle   String?
+  clientCompany String?
+  content       String
+  published     Boolean  @default(true)
+  featured      Boolean  @default(false)
+  sortOrder     Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([published])
+  @@index([featured])
+}
+
+model TeamMember {
+  id        String   @id @default(cuid())
+  name      String
+  position  String
+  bio       String?
+  email     String?
+  phone     String?
+  published Boolean  @default(true)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([published])
+}
+
+model SiteSetting {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+
+  @@index([key])
+}
+
+model AuditLog {
+  id        String      @id @default(cuid())
+  userId    String
+  action    AuditAction
+  entity    String
+  entityId  String?
+  metadata  Json?
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime    @default(now())
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([action])
+  @@index([entity])
+  @@index([createdAt])
+}
+
+model Consultation {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  company   String?
+  service   String?
+  message   String
+  status    String   @default("NEW")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+}
+
+enum MediaSource {
+  UPLOAD
+  EXTERNAL
+}
+
+enum AuditAction {
+  LOGIN
+  LOGOUT
+  PROJECT_CREATED
+  PROJECT_UPDATED
+  PROJECT_DELETED
+  PROJECT_PUBLISHED
+  PROJECT_UNPUBLISHED
+  MATERIAL_CREATED
+  MATERIAL_UPDATED
+  MATERIAL_DELETED
+  MEDIA_UPLOADED
+  MEDIA_DELETED
+  USER_CREATED
+  USER_UPDATED
+  USER_DELETED
+  SETTINGS_UPDATED
+}
