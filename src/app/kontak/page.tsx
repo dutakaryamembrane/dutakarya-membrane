@@ -202,12 +202,12 @@ export default function KontakPage() {
                   py-3.5
                   text-sm
                   font-semibold
-                  text-white
+                  !text-white
                   transition-all
                   duration-200
                   ease-out
                   hover:bg-[#b89452]
-                  hover:text-white
+                  hover:!text-white
                 "
                 style={{ color: "#ffffff" }}
               >
@@ -237,13 +237,13 @@ export default function KontakPage() {
                   py-3.5
                   text-sm
                   font-semibold
-                  text-[#171717]
+                  !text-[#171717]
                   transition-all
                   duration-200
                   ease-out
                   hover:border-[#b89452]
                   hover:bg-[#b89452]
-                  hover:text-white
+                  hover:!text-white
                 "
               >
                 <span>Duta Karya Membrane 2</span>
