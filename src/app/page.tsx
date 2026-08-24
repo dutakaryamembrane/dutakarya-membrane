@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Header } from "@/components/ui/Header";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = "force-dynamic";
+
 const services = [
   {
     number: "01",
@@ -43,7 +45,12 @@ const materials = [
     title: "PVC + PVDF",
     description:
       "Material PVC dengan lapisan PVDF untuk perlindungan permukaan yang lebih baik dan daya tahan jangka panjang.",
-    features: ["Tahan UV lebih tinggi", "Warna lebih awet", "Permukaan mudah dibersihkan", "Tahan kotoran & jamur"],
+    features: [
+      "Tahan UV lebih tinggi",
+      "Warna lebih awet",
+      "Permukaan mudah dibersihkan",
+      "Tahan kotoran & jamur",
+    ],
     applications: ["Kanopi Premium", "Stadion", "Resort", "Atrium"],
   },
   {
@@ -51,7 +58,12 @@ const materials = [
     title: "PTFE Coated Fiberglass",
     description:
       "Material fiberglass berlapis PTFE untuk kebutuhan struktur dengan ketahanan cuaca dan umur pakai yang panjang.",
-    features: ["Ketahanan UV sangat tinggi", "Tahan suhu ekstrem", "Tidak mudah kotor", "Stabilitas dimensi tinggi"],
+    features: [
+      "Ketahanan UV sangat tinggi",
+      "Tahan suhu ekstrem",
+      "Tidak mudah kotor",
+      "Stabilitas dimensi tinggi",
+    ],
     applications: ["Stadion", "Airport", "Terminal", "Struktur Besar"],
   },
   {
@@ -59,7 +71,12 @@ const materials = [
     title: "ETFE Film",
     description:
       "Film transparan dan ringan dengan bobot rendah, cocok untuk kebutuhan arsitektur yang membutuhkan cahaya alami.",
-    features: ["Transparan & ringan", "Tahan UV", "Tahan bahan kimia", "Umur pakai panjang"],
+    features: [
+      "Transparan & ringan",
+      "Tahan UV",
+      "Tahan bahan kimia",
+      "Umur pakai panjang",
+    ],
     applications: ["Stadion", "Atrium", "Mall", "Botanical Garden"],
   },
   {
@@ -67,7 +84,12 @@ const materials = [
     title: "HDPE Shade Fabric",
     description:
       "Material shade fabric untuk area teduh dengan sirkulasi udara yang baik dan karakter yang ringan.",
-    features: ["Sirkulasi udara baik", "Ringan & fleksibel", "Tahan UV", "Beragam tingkat kerapatan"],
+    features: [
+      "Sirkulasi udara baik",
+      "Ringan & fleksibel",
+      "Tahan UV",
+      "Beragam tingkat kerapatan",
+    ],
     applications: ["Shade Sail", "Parkiran", "Playground", "Taman"],
   },
   {
@@ -83,7 +105,12 @@ const materials = [
     title: "AGTEX (PVC Coated Polyester)",
     description:
       "Material membrane berbasis polyester dengan lapisan PVC untuk kebutuhan struktur membrane dengan performa tinggi.",
-    features: ["Tahan cuaca & UV", "Kekuatan tarik tinggi", "Tahan sobek", "Berbagai pilihan gramasi"],
+    features: [
+      "Tahan cuaca & UV",
+      "Kekuatan tarik tinggi",
+      "Tahan sobek",
+      "Berbagai pilihan gramasi",
+    ],
     applications: ["Kanopi Membrane", "Stadion", "Indonesia Project", "Rooftop"],
   },
   {
@@ -91,8 +118,18 @@ const materials = [
     title: "HEYTex (PVC Coated Polyester)",
     description:
       "Material PVC coated polyester dengan pilihan performa untuk berbagai kebutuhan struktur membrane dan arsitektur.",
-    features: ["Coating PVC berkualitas", "Stabilitas dimensi", "Tahan UV & cuaca", "Cocok untuk struktur tensile"],
-    applications: ["Kanopi Parkir", "Tenda Besar", "Area", "Struktur Membrane"],
+    features: [
+      "Coating PVC berkualitas",
+      "Stabilitas dimensi",
+      "Tahan UV & cuaca",
+      "Cocok untuk struktur tensile",
+    ],
+    applications: [
+      "Kanopi Parkir",
+      "Tenda Besar",
+      "Area",
+      "Struktur Membrane",
+    ],
   },
 ];
 
@@ -654,6 +691,7 @@ export default async function HomePage() {
               </h3>
 
               <div className="mt-8 overflow-x-auto">
+
                 <table className="w-full min-w-[620px] border-collapse text-left text-xs">
 
                   <thead>
@@ -661,15 +699,19 @@ export default async function HomePage() {
                       <th className="px-3 py-3 font-medium">
                         Material
                       </th>
+
                       <th className="px-3 py-3 font-medium">
                         UV
                       </th>
+
                       <th className="px-3 py-3 font-medium">
                         Waterproof
                       </th>
+
                       <th className="px-3 py-3 font-medium">
                         Flexible
                       </th>
+
                       <th className="px-3 py-3 font-medium">
                         Harga
                       </th>
@@ -708,6 +750,7 @@ export default async function HomePage() {
                   </tbody>
 
                 </table>
+
               </div>
             </div>
 
