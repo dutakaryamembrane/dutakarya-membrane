@@ -2,8 +2,6 @@ import Link from "next/link";
 import { Header } from "@/components/ui/Header";
 import { prisma } from "@/lib/prisma";
 
-export const dynamic = "force-dynamic";
-
 const services = [
   {
     number: "01",
@@ -124,12 +122,7 @@ const materials = [
       "Tahan UV & cuaca",
       "Cocok untuk struktur tensile",
     ],
-    applications: [
-      "Kanopi Parkir",
-      "Tenda Besar",
-      "Area",
-      "Struktur Membrane",
-    ],
+    applications: ["Kanopi Parkir", "Tenda Besar", "Area", "Struktur Membrane"],
   },
 ];
 
@@ -236,7 +229,6 @@ export default async function HomePage() {
 
   return (
     <main className="min-h-screen bg-[#f7f5f0] text-[#171717]">
-
       {/* ===================================================== */}
       {/* HEADER */}
       {/* ===================================================== */}
@@ -274,7 +266,6 @@ export default async function HomePage() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-
               {/* HERO PRIMARY BUTTON */}
               <a
                 href="#contact"
@@ -290,7 +281,6 @@ export default async function HomePage() {
               >
                 Lihat Portofolio
               </a>
-
             </div>
           </div>
         </div>
@@ -301,7 +291,6 @@ export default async function HomePage() {
 
         <div className="mt-16 overflow-hidden rounded-[2rem] bg-[#20201e] md:mt-20">
           <div className="relative min-h-[430px] overflow-hidden md:min-h-[560px]">
-
             <img
               src="/images/canopy.png"
               alt="Canopy membrane Duta Karya Membrane"
@@ -319,7 +308,6 @@ export default async function HomePage() {
             ================================================= */}
 
             <div className="absolute inset-y-0 left-0 flex w-full max-w-full flex-col justify-start px-6 py-8 text-white md:max-w-[52%] md:justify-center md:px-10 md:py-10 lg:px-12">
-
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b89452]">
                 Duta Karya Membrane
               </p>
@@ -343,7 +331,6 @@ export default async function HomePage() {
               ================================================= */}
 
               <div className="mt-7 grid max-w-xl grid-cols-3 gap-3 md:mt-10 md:gap-6">
-
                 {/* FEATURE 01 */}
                 <div>
                   <svg
@@ -416,7 +403,6 @@ export default async function HomePage() {
                     Perlindungan optimal dari panas, hujan, dan angin.
                   </p>
                 </div>
-
               </div>
             </div>
 
@@ -427,7 +413,6 @@ export default async function HomePage() {
             <div className="absolute bottom-6 right-6 hidden text-sm text-white/60 md:block md:bottom-10 md:right-10">
               Bandung · Indonesia
             </div>
-
           </div>
         </div>
       </section>
@@ -447,9 +432,7 @@ export default async function HomePage() {
                 {item.value}
               </p>
 
-              <p className="mt-2 text-sm text-white/45">
-                {item.label}
-              </p>
+              <p className="mt-2 text-sm text-white/45">{item.label}</p>
             </div>
           ))}
         </div>
@@ -464,7 +447,6 @@ export default async function HomePage() {
         className="mx-auto max-w-[1440px] px-6 py-24 md:px-10 md:py-32 lg:px-14"
       >
         <div className="grid gap-14 lg:grid-cols-[0.7fr_1.3fr]">
-
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b89452]">
               About Duta Karya
@@ -516,9 +498,7 @@ export default async function HomePage() {
                     {number}.
                   </span>
 
-                  <h3 className="mt-3 text-xl font-medium">
-                    {title}
-                  </h3>
+                  <h3 className="mt-3 text-xl font-medium">{title}</h3>
 
                   <p className="mt-2 text-sm leading-6 text-[#77736c]">
                     {description}
@@ -527,7 +507,6 @@ export default async function HomePage() {
               ))}
             </div>
           </div>
-
         </div>
       </section>
 
@@ -540,7 +519,6 @@ export default async function HomePage() {
         className="bg-[#ebe8e1] px-6 py-24 md:px-10 md:py-32 lg:px-14"
       >
         <div className="mx-auto max-w-[1440px]">
-
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b89452]">
@@ -565,15 +543,9 @@ export default async function HomePage() {
                 className="group bg-[#f7f5f0] p-8 transition-colors hover:bg-white md:p-10 lg:p-12"
               >
                 <div className="flex items-start justify-between">
-
                   <span className="text-xs font-medium text-[#b89452]">
                     {service.number}
                   </span>
-
-                  <span className="text-2xl text-[#aaa49a] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                    ↗
-                  </span>
-
                 </div>
 
                 <h3 className="mt-20 text-3xl font-medium tracking-[-0.03em] md:text-4xl">
@@ -586,7 +558,6 @@ export default async function HomePage() {
               </article>
             ))}
           </div>
-
         </div>
       </section>
 
@@ -599,7 +570,6 @@ export default async function HomePage() {
         className="bg-[#ebe8e1] px-6 py-24 md:px-10 md:py-32 lg:px-14"
       >
         <div className="mx-auto max-w-[1440px]">
-
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b89452]">
@@ -629,15 +599,9 @@ export default async function HomePage() {
                 className="group bg-[#f7f5f0] p-7 transition-colors hover:bg-white md:p-9 lg:p-10"
               >
                 <div className="flex items-start justify-between gap-6">
-
                   <span className="text-sm font-medium text-[#b89452]">
                     {material.number}
                   </span>
-
-                  <span className="text-2xl text-[#aaa49a] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                    ↗
-                  </span>
-
                 </div>
 
                 <h3 className="mt-10 text-2xl font-medium tracking-[-0.03em] md:text-3xl">
@@ -660,28 +624,22 @@ export default async function HomePage() {
                 </div>
 
                 <div className="mt-8 border-t border-black/10 pt-5">
-
                   <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#b89452]">
                     Aplikasi
                   </p>
 
                   <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs text-[#77736c]">
                     {material.applications.map((application) => (
-                      <span key={application}>
-                        {application}
-                      </span>
+                      <span key={application}>{application}</span>
                     ))}
                   </div>
-
                 </div>
               </article>
             ))}
           </div>
 
           <div className="mt-14 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-
             <div className="rounded-[1.5rem] bg-[#171717] p-7 text-white md:p-9 lg:p-10">
-
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b89452]">
                 Material Comparison
               </p>
@@ -691,30 +649,14 @@ export default async function HomePage() {
               </h3>
 
               <div className="mt-8 overflow-x-auto">
-
                 <table className="w-full min-w-[620px] border-collapse text-left text-xs">
-
                   <thead>
                     <tr className="border-b border-white/10 text-white/45">
-                      <th className="px-3 py-3 font-medium">
-                        Material
-                      </th>
-
-                      <th className="px-3 py-3 font-medium">
-                        UV
-                      </th>
-
-                      <th className="px-3 py-3 font-medium">
-                        Waterproof
-                      </th>
-
-                      <th className="px-3 py-3 font-medium">
-                        Flexible
-                      </th>
-
-                      <th className="px-3 py-3 font-medium">
-                        Harga
-                      </th>
+                      <th className="px-3 py-3 font-medium">Material</th>
+                      <th className="px-3 py-3 font-medium">UV</th>
+                      <th className="px-3 py-3 font-medium">Waterproof</th>
+                      <th className="px-3 py-3 font-medium">Flexible</th>
+                      <th className="px-3 py-3 font-medium">Harga</th>
                     </tr>
                   </thead>
 
@@ -729,9 +671,7 @@ export default async function HomePage() {
                             {name}
                           </td>
 
-                          <td className="px-3 py-3 text-[#b89452]">
-                            {uv}
-                          </td>
+                          <td className="px-3 py-3 text-[#b89452]">{uv}</td>
 
                           <td className="px-3 py-3 text-[#b89452]">
                             {waterproof}
@@ -741,21 +681,16 @@ export default async function HomePage() {
                             {flexible}
                           </td>
 
-                          <td className="px-3 py-3 text-white/70">
-                            {price}
-                          </td>
+                          <td className="px-3 py-3 text-white/70">{price}</td>
                         </tr>
                       )
                     )}
                   </tbody>
-
                 </table>
-
               </div>
             </div>
 
             <div className="rounded-[1.5rem] bg-white p-7 md:p-9 lg:p-10">
-
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b89452]">
                 How to Choose
               </p>
@@ -765,7 +700,6 @@ export default async function HomePage() {
               </h3>
 
               <div className="mt-8 space-y-0 border-t border-black/10">
-
                 {[
                   [
                     "01",
@@ -797,9 +731,7 @@ export default async function HomePage() {
                     </span>
 
                     <div>
-                      <h4 className="font-medium">
-                        {title}
-                      </h4>
+                      <h4 className="font-medium">{title}</h4>
 
                       <p className="mt-1 text-sm leading-6 text-[#77736c]">
                         {description}
@@ -807,10 +739,8 @@ export default async function HomePage() {
                     </div>
                   </div>
                 ))}
-
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -823,9 +753,7 @@ export default async function HomePage() {
         id="projects"
         className="mx-auto max-w-[1440px] px-6 py-24 md:px-10 md:py-32 lg:px-14"
       >
-
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
-
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b89452]">
               Selected Projects
@@ -834,9 +762,7 @@ export default async function HomePage() {
             <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
               Duta Karya
               <br />
-              <span className="text-[#8d8982]">
-                highlights.
-              </span>
+              <span className="text-[#8d8982]">highlights.</span>
             </h2>
           </div>
 
@@ -846,7 +772,6 @@ export default async function HomePage() {
           >
             Explore all projects →
           </a>
-
         </div>
 
         {/* ===================================================== */}
@@ -854,11 +779,8 @@ export default async function HomePage() {
         {/* ===================================================== */}
 
         {projects.length > 0 ? (
-
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-
             {projects.map((project, index) => {
-
               // ==================================================
               // AMBIL FOTO PROJECT
               //
@@ -881,26 +803,18 @@ export default async function HomePage() {
                   href={`/projects/${project.slug}`}
                   className="group overflow-hidden rounded-[1.5rem] bg-[#1c1c1a] !text-white transition-transform duration-300 hover:-translate-y-1"
                 >
-
                   {/* ==================================================
                       IMAGE
                   ================================================== */}
 
                   <div className="relative aspect-[4/3] overflow-hidden">
-
                     {coverMedia ? (
-
                       <img
                         src={coverMedia.url}
-                        alt={
-                          coverMedia.altText ||
-                          project.title
-                        }
+                        alt={coverMedia.altText || project.title}
                         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
-
                     ) : (
-
                       <>
                         <div className="absolute inset-0 bg-[linear-gradient(135deg,#292722,#555044_45%,#191918)] transition-transform duration-700 group-hover:scale-105" />
 
@@ -908,13 +822,11 @@ export default async function HomePage() {
 
                         <div className="absolute left-[22%] top-[50%] h-px w-[62%] rotate-[-10deg] bg-white/20" />
                       </>
-
                     )}
 
                     <div className="absolute bottom-6 left-6 text-xs uppercase tracking-[0.2em] text-white/60">
                       {project.category || "PROJECT"}
                     </div>
-
                   </div>
 
                   {/* ==================================================
@@ -922,11 +834,8 @@ export default async function HomePage() {
                   ================================================== */}
 
                   <div className="p-7 md:p-8">
-
                     <div className="flex items-start justify-between gap-4">
-
                       <div className="min-w-0">
-
                         <p className="text-xs text-white/40">
                           Project {String(index + 1).padStart(2, "0")}
                         </p>
@@ -946,39 +855,26 @@ export default async function HomePage() {
                             {project.description}
                           </p>
                         )}
-
                       </div>
 
                       <span className="shrink-0 text-xl text-[#b89452] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                         ↗
                       </span>
-
                     </div>
-
                   </div>
-
                 </a>
               );
             })}
-
           </div>
-
         ) : (
-
           <div className="mt-14 rounded-[1.5rem] border border-black/10 p-10 text-center">
-
-            <p className="text-lg font-medium">
-              Belum ada project.
-            </p>
+            <p className="text-lg font-medium">Belum ada project.</p>
 
             <p className="mt-2 text-sm text-[#77736c]">
               Project yang sudah dipublish akan muncul di bagian ini.
             </p>
-
           </div>
-
         )}
-
       </section>
 
       {/* ===================================================== */}
@@ -990,13 +886,11 @@ export default async function HomePage() {
         className="bg-[#171717] px-6 py-24 text-white md:px-10 md:py-32 lg:px-14"
       >
         <div className="mx-auto max-w-[1440px]">
-
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b89452]">
             Our Process
           </p>
 
           <div className="mt-6 flex flex-col justify-between gap-8 md:flex-row md:items-end">
-
             <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
               From idea
               <br />
@@ -1007,17 +901,14 @@ export default async function HomePage() {
               Proses kerja yang terstruktur membantu memastikan setiap proyek
               berjalan dari tahap awal hingga selesai dengan jelas.
             </p>
-
           </div>
 
           <div className="mt-16 grid border-t border-white/10 md:grid-cols-4">
-
             {process.map((item) => (
               <div
                 key={item.number}
                 className="border-b border-white/10 py-8 md:border-b-0 md:border-r md:px-7 md:first:pl-0 md:last:border-r-0"
               >
-
                 <span className="text-xs text-[#b89452]">
                   {item.number}
                 </span>
@@ -1029,12 +920,9 @@ export default async function HomePage() {
                 <p className="mt-4 text-sm leading-7 text-white/45">
                   {item.description}
                 </p>
-
               </div>
             ))}
-
           </div>
-
         </div>
       </section>
 
@@ -1046,11 +934,8 @@ export default async function HomePage() {
         id="contact"
         className="mx-auto max-w-[1440px] px-6 py-24 md:px-10 md:py-32 lg:px-14"
       >
-
         <div className="rounded-[2rem] bg-[#b89452] px-7 py-14 md:px-14 md:py-20 lg:px-20">
-
           <div className="max-w-4xl">
-
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-black/50">
               Start a project
             </p>
@@ -1074,9 +959,7 @@ export default async function HomePage() {
             >
               Hubungi Kami
             </Link>
-
           </div>
-
         </div>
       </section>
 
@@ -1085,11 +968,8 @@ export default async function HomePage() {
       {/* ===================================================== */}
 
       <footer className="border-t border-black/10 bg-[#f7f5f0]">
-
         <div className="mx-auto flex max-w-[1440px] flex-col gap-8 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-10 lg:px-14">
-
           <div>
-
             <p className="font-semibold tracking-[-0.02em]">
               Duta Karya Membrane
             </p>
@@ -1097,17 +977,13 @@ export default async function HomePage() {
             <p className="mt-2 text-sm text-[#77736c]">
               Membrane · Tensile · Canopy · Steel
             </p>
-
           </div>
 
           <div className="text-sm text-[#77736c]">
             © {new Date().getFullYear()} Duta Karya Membrane
           </div>
-
         </div>
-
       </footer>
-
     </main>
   );
 }
