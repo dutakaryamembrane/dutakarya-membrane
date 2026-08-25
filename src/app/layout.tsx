@@ -42,6 +42,13 @@ export const metadata: Metadata = {
     canonical: "/",
   },
 
+  /*
+   * Google Search Console Verification
+   */
+  verification: {
+    google: "faAvheQ3jEumV6s__XptD3IjMiMeB_FsZxWYTHBztOs",
+  },
+
   openGraph: {
     type: "website",
     locale: "id_ID",
