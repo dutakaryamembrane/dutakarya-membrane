@@ -254,7 +254,7 @@ export default function KontakPage() {
                 "
                 style={{ color: "#ffffff" }}
               >
-                Duta Karya Membrane 1
+                Rara
               </a>
 
               {/* ==========================================
@@ -289,7 +289,7 @@ export default function KontakPage() {
                   hover:!text-white
                 "
               >
-                Duta Karya Membrane 2
+                Moch Apandi Ridwan
               </a>
 
             </div>
